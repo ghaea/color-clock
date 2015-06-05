@@ -73,13 +73,12 @@ $(document).on("ready", function() {
     //click
 
     $('.hex, .time').on("click", function() {
-
-      console.log("hello")
+      
       $('.time').toggleClass('hidden')
       $('.hex').toggleClass('hidden')
     
       })
-    
+
     $('.hex').text("#" + RGBToHex(r).substring(0,2) + ":" + RGBToHex(g).substring(0,2) + ":" + RGBToHex(b).substring(0,2))
 }
 
