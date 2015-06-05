@@ -42,38 +42,48 @@ var b = convertTimeframe(moment().format('ss'), "second")
 
     $(".clock-container").css("background", "rgb(" + r + "," + g + "," + b +")")
 
+var RGBToHex = function(r, g, b){
+
+        var bin = r << 16 | g << 8 | b;
+        
+        return (function(h){
+
+            return new Array(7-h.length).join("0")+h
+          })
+
+            (bin.toString(16).toUpperCase())
+        }
+
 
 
 // DOC START
 
 $(document).on("ready", function() {
 
-// Digital Clock in hh:mm:ss format
-var reloadClock = function() {
-  $('.time').html(moment().format('hh:mm:ss'));
+  // Digital Clock in hh:mm:ss format
+  var reloadClock = function() {
+    $('.time').html(moment().format('hh:mm:ss'));
 
-  r = convertTimeframe(moment().format('hh'), "hour")
-  g = convertTimeframe(moment().format('mm'), "minute")
-  b = convertTimeframe(moment().format('ss'), "second")
+    r = convertTimeframe(moment().format('hh'), "hour")
+    g = convertTimeframe(moment().format('mm'), "minute")
+    b = convertTimeframe(moment().format('ss'), "second")
+      
+    $(".clock-container").css("background", "rgb(" + r + "," + g + "," + b +")")
+
+    //click
+
+    $('.hex, .time').on("click", function() {
+
+      console.log("hello")
+      $('.time').toggleClass('hidden')
+      $('.hex').toggleClass('hidden')
     
-  $(".clock-container").css("background", "rgb(" + r + "," + g + "," + b +")")
-  
+      })
+    
+    $('.hex').text("#" + RGBToHex(r).substring(0,2) + ":" + RGBToHex(g).substring(0,2) + ":" + RGBToHex(b).substring(0,2))
 }
 
-setInterval(reloadClock, 1000)
-
-//change to hex time
-/*$(".time").on("click", function() {
-    
-    var backgroundColor = "rgb("r + "," + g + "," + b")"
-
-    var hexColor = hex(backgroundColor) 
-
-    var $hexTime = $(".time" = hexColor)
-
-
-})*/
-
+  setInterval(reloadClock, 1000)
 
 })
 
