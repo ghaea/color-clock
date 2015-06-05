@@ -62,8 +62,16 @@ var reloadClock = function() {
 
 setInterval(reloadClock, 1000)
 
+//change to hex time
 /*$(".time").on("click", function() {
-    .format("r + ":" + g ":" b")
+    
+    var backgroundColor = "rgb("r + "," + g + "," + b")"
+
+    var hexColor = hex(backgroundColor) 
+
+    var $hexTime = $(".time" = hexColor)
+
+
 })*/
 
 
