@@ -1,0 +1,19 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.clock-container {
+	height: 100vh;
+	position: relative;
+	text-align: center;
+}
+
+.time {
+	color: rgb(250,250,250);
+	font-size: 120px;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
