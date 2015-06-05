@@ -31,12 +31,12 @@ var convertTimeframe = function(amount, unit) {
 
 // START
 
-var clock = moment().format('hh:mm:ss')
+var clock = moment().format('HH:mm:ss')
 
 var timeText = $(".time").text(clock)
 
 
-var r = convertTimeframe(moment().format('hh'), "hour")
+var r = convertTimeframe(moment().format('HH'), "hour")
 var g = convertTimeframe(moment().format('mm'), "minute")
 var b = convertTimeframe(moment().format('ss'), "second")
 
@@ -62,9 +62,9 @@ $(document).on("ready", function() {
 
   // Digital Clock in hh:mm:ss format
   var reloadClock = function() {
-    $('.time').html(moment().format('hh:mm:ss'));
+    $('.time').html(moment().format('HH:mm:ss'));
 
-    r = convertTimeframe(moment().format('hh'), "hour")
+    r = convertTimeframe(moment().format('HH'), "hour")
     g = convertTimeframe(moment().format('mm'), "minute")
     b = convertTimeframe(moment().format('ss'), "second")
       
