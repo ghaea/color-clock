@@ -8,16 +8,53 @@
 	height: 100vh;
 	position: relative;
 	text-align: center;
+	font-family: "PT Sans Caption";
+
 }
 
 .time, .hex {
 	color: rgb(250,250,250);
 	font-size: 120px;
+	line-height: 120px;
 	position: relative;
 	top: 50%;
 	transform: translateY(-50%);
 }
 
+.underline {
+	font-size: 72px;
+	width: 100%;
+	color: rgb(250,250,250);
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	
+	/* Attempted to create moving line.
+
+	animation-duration: 60s;
+	animation-name: slide;*/
+}
+
+/*.underline.hidden {
+	width: 575px;
+}
+
+@keyframes slide {
+	from {
+		margin-right: 0%;
+		width: 250px;
+	}
+
+	to {
+		margin-left: 20%;
+		width: 250px;
+	}
+}*/
+
 .hidden {
 	display: none;
+}
+
+.city {
+	font-size: 72px;
 }

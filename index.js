@@ -70,7 +70,7 @@ $(document).on("ready", function() {
       
     $(".clock-container").css("background", "rgb(" + r + "," + g + "," + b +")")
 
-    //click
+    //click and change to hex color
 
     $('.hex, .time').on("click", function() {
       
@@ -80,10 +80,24 @@ $(document).on("ready", function() {
       })
 
     $('.hex').text("#" + RGBToHex(r).substring(0,2) + ":" + RGBToHex(g).substring(0,2) + ":" + RGBToHex(b).substring(0,2))
+
+    // Change cities
+    
+    var timestamp = Date.now()
+    var london = moment.tz(timestamp, "Europe/London")
+    var londonTime = london.format('HH:mm:ss')
+      
+    $('.city').on('click', function() {
+      // Hid Washington DC and show London
+      $('.city').toggleClass('hidden')
+      // When London shows, change time
+      $('.time').text(londonTime)
+
+    })
+
 }
 
   setInterval(reloadClock, 1000)
-
 })
 
 
