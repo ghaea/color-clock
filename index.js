@@ -40,7 +40,7 @@ var r = convertTimeframe(moment().format('HH'), "hour")
 var g = convertTimeframe(moment().format('mm'), "minute")
 var b = convertTimeframe(moment().format('ss'), "second")
 
-$(".clock-container").css("background", "radial-gradient(at 50% 400px, rgb(200, 200, 200), rgb(" + r + "," + g + "," + b +")")
+$(".clock-container").css("background", "radial-gradient(at 50% 50vh, rgb(200, 200, 200), rgb(" + r + "," + g + "," + b +")")
 
 var RGBToHex = function(r, g, b){
 
@@ -68,7 +68,7 @@ $(document).on("ready", function() {
     g = convertTimeframe(moment().format('mm'), "minute")
     b = convertTimeframe(moment().format('ss'), "second")
       
-    $(".clock-container").css("background", "radial-gradient(at 50% 400px, rgb(200, 200, 200), rgb(" + r + "," + g + "," + b +")")
+    $(".clock-container").css("background", "radial-gradient(at 50% 50vh, rgb(200, 200, 200), rgb(" + r + "," + g + "," + b +")")
 
     //click and change to hex color
 
